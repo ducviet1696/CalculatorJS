@@ -1,7 +1,8 @@
 const Calculate = require('./Operator');
 function Calculator() {
     this.operator = {
-        "+": new Calculate.Addition()
+        "+": new Calculate.Addition(),
+        "-": new Calculate.Subtraction()
     };
     this.result = function (operator, num1, num2) {
         return this.operator[operator].run(num1, num2);

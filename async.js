@@ -13,13 +13,10 @@ function HelloWorldTwo(callback) {
     }, 10000);
 }
 
-function HelloWorldThree(callback) {
+function HelloWorldThree() {
     setTimeout(function () {
         console.log("HelloWorld - Three");
-        callback();
     }, 2000);
 }
 
-async.series([HelloWorldOne, HelloWorldTwo, HelloWorldThree], function () {
-   console.log("Finish");
-});
+async.series([HelloWorldOne, HelloWorldTwo], HelloWorldThree);

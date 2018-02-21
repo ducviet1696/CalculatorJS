@@ -12,7 +12,7 @@ function Calculator() {
 }
 let Cal = new Calculator();
 try {
-    console.log(Cal.result("/", 5, 0))
+    console.log(Cal.result("*", 5, 2))
 } catch (err){
     console.log(err);
 }

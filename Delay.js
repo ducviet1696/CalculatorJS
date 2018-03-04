@@ -1,27 +1,28 @@
-const async = require("async");
+const Async = require("async");
 
-function Hello(ck) {
+function hello(callback) {
     setTimeout(function () {
         console.log("Hello");
-        ck();
+        callback();
     },5000)
 }
-function World(callback) {
+function world(callback) {
     setTimeout(function () {
         console.log("World");
         callback();
     },1000)
 }
-function Foo(callback) {
-    setTimeout(function () {
+function foo(callback) {
+    setTimeout( () =>  {
         console.log("Foo");
         callback();
     },7000)
 }
-function Bar() {
+function bar() {
     setTimeout(function () {
         console.log("Bar");
 
     },2000)
 }
-async.series([World, Hello, Foo], Bar);
+
+Async.series([world, hello, foo], bar);
